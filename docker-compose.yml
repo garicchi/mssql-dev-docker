@@ -1,0 +1,21 @@
+version: "3.9"
+
+services:
+  rdb:
+    build:
+      context: ./rdb
+    env_file:
+      - .env
+    ports:
+      - "1433:1433"
+    volumes:
+      - rdb_data:/var/opt/mssql
+      - ./rdb/initdb.d:/docker-entrypoint-initdb.d
+    environment:
+      # ライセンスに同意する場合はコメントアウトしてください
+      # c.f. https://hub.docker.com/_/microsoft-mssql-server
+      # ACCEPT_EULA: "Y"
+      SA_PASSWORD: ${RDB_ROOT_PASS}
+volumes:
+  rdb_data:
+
