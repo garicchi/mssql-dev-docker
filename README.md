@@ -15,7 +15,7 @@ ASP.NET Core開発時にSQL Serverをローカルで使いたい場合などに�
       # c.f. https://hub.docker.com/_/microsoft-mssql-server
 -     # ACCEPT_EULA: "Y"
 +     ACCEPT_EULA: "Y"
-      SA_PASSWORD: ${RDB_ROOT_PASS}
+      MSSQL_SA_PASSWORD: ${RDB_ROOT_PASS}
 ```
 
 `.env.template` をコピーして `.env` を作成してください。
