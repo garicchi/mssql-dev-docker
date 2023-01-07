@@ -15,7 +15,7 @@ services:
       # ライセンスに同意する場合はコメントアウトしてください
       # c.f. https://hub.docker.com/_/microsoft-mssql-server
       # ACCEPT_EULA: "Y"
-      SA_PASSWORD: ${RDB_ROOT_PASS}
+      MSSQL_SA_PASSWORD: ${RDB_ROOT_PASS}
 volumes:
   rdb_data:
 
